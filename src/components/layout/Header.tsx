@@ -9,7 +9,7 @@ export function Header() {
           className="inline-flex items-center gap-2 font-bold leading-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fffaf0]"
           aria-label="Code à Cuisine – Startseite"
         >
-          <img src="/assets/img/logo-light.png" alt="logo" />
+          <img src="/assets/img/logo-light.svg" alt="logo" />
         </Link>
       </div>
     </header>
