@@ -12,6 +12,7 @@ type PreferencesStepProps = {
   preferences: GeneratorPreferences;
   onPreferencesChange: Dispatch<SetStateAction<GeneratorPreferences>>;
   onBack: () => void;
+  onGenerate: () => void;
 };
 
 const cookingTimes: {
@@ -44,6 +45,7 @@ export function PreferencesStep({
   preferences,
   onPreferencesChange,
   onBack,
+  onGenerate,
 }: PreferencesStepProps) {
   function updatePreferences(changes: Partial<GeneratorPreferences>) {
     onPreferencesChange((currentPreferences) => ({
@@ -165,6 +167,7 @@ export function PreferencesStep({
       <div className="mt-12 flex justify-center">
         <button
           type="button"
+          onClick={onGenerate}
           className="min-h-11 bg-[#315f35] px-8 py-3 font-medium text-white"
         >
           Generate recipe
@@ -206,10 +209,7 @@ function Counter({
           −
         </button>
 
-        <span
-          className="min-w-8 text-center text-2xl"
-          aria-live="polite"
-        >
+        <span className="min-w-8 text-center text-2xl" aria-live="polite">
           {value}
         </span>
 
