@@ -2,7 +2,11 @@ import Link from "next/link";
 
 export function HomeHero() {
   return (
-    <section className="flex min-h-[calc(100dvh-5rem)] flex-col justify-between items-start bg-[#315f35] bg-[url('/assets/img/cuisine-gallery-collage.webp')] bg-[position:300%] bg-[length:80%] bg-no-repeat px-[1.6rem] py-8 text-[#fffaf0]">
+    <section className="flex min-h-[calc(100dvh-5rem)] flex-col justify-between items-start bg-[#315f35] bg-[url('/assets/img/cuisine-gallery-collage.webp')] bg-[position:300%] bg-[length:80%] bg-no-repeat px-[1.6rem] py-8 text-[#fffaf0] h-dvh">
+      <header>
+        <img src="/assets/img/logo-light.svg" alt="" />
+      </header>
+
       <div>
         <p className="text-[clamp(1rem,1.8vw,1.35rem)]  tracking-wide ">
           AI-Powered <br />

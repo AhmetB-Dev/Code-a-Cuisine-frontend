@@ -43,6 +43,10 @@ export function IngredientStep({
   return (
     <section className="mx-auto w-full max-w-5xl px-6 py-12">
       <header>
+        <img src="/assets/img/logo-dark.svg" alt="" />
+      </header>
+
+      <div>
         <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold tracking-tight text-[#174d20]">
           Generate recipe
         </h1>
@@ -52,17 +56,11 @@ export function IngredientStep({
           <br />
           Pop it in—we&apos;ve got the perfect recipe waiting.
         </p>
-      </header>
+      </div>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-[2rem] bg-[#c5d2c5] p-6 sm:p-8"
-        >
-          <label
-            htmlFor="ingredient"
-            className="block text-xl text-[#174d20]"
-          >
+        <form onSubmit={handleSubmit} className="rounded-[2rem] bg-[#c5d2c5] p-6 sm:p-8">
+          <label htmlFor="ingredient" className="block text-xl text-[#174d20]">
             Ingredient
           </label>
 
@@ -101,9 +99,7 @@ export function IngredientStep({
                 id="unit"
                 name="unit"
                 value={unit}
-                onChange={(event) =>
-                  setUnit(event.target.value as IngredientUnit)
-                }
+                onChange={(event) => setUnit(event.target.value as IngredientUnit)}
                 className="h-14 rounded-full bg-[#f5efe4] px-5 text-lg text-[#174d20]"
               >
                 <option value="gram">gram</option>
@@ -128,24 +124,16 @@ export function IngredientStep({
           aria-labelledby="ingredient-list-title"
           className="min-h-64 rounded-[2rem] bg-[#c5d2c5] p-6 sm:p-8"
         >
-          <h2
-            id="ingredient-list-title"
-            className="text-xl text-[#174d20]"
-          >
+          <h2 id="ingredient-list-title" className="text-xl text-[#174d20]">
             List of your Ingredients
           </h2>
 
           {ingredients.length === 0 ? (
-            <p className="mt-6 text-[#174d20]/70">
-              No ingredients added yet.
-            </p>
+            <p className="mt-6 text-[#174d20]/70">No ingredients added yet.</p>
           ) : (
             <ul className="mt-6 space-y-3">
               {ingredients.map((ingredient) => (
-                <li
-                  key={ingredient.id}
-                  className="flex items-center justify-between gap-4"
-                >
+                <li key={ingredient.id} className="flex items-center justify-between gap-4">
                   <span className="text-[#174d20]">
                     {ingredient.amount} {ingredient.unit} {ingredient.name}
                   </span>
